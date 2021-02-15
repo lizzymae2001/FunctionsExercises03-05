@@ -44,29 +44,9 @@ let arrayTest3 = ['hello', 'world', 123, 'orange'];
 function reverseArray(arr) {
   let reversed = [];
   for (i = 0; i < arr.length; i++){
-    reversed = reverseCharacters(arr[i]) + ', ' + reversed;
+    reversed.push(reverseCharacters(arr[i]));
   }
-     return reversed.slice(0, reversed.length - 2);
+     return reversed.reverse();
 }
 
-console.log(reverseArray(arrayTest3));
-
-
-//return reverseCharacters(arr[i]);
-
-
-
-//    reversed = reverseCharacters(arr[i]) + ', ' + reversed;
-//  }
-//    return reversed.slice(0, reversed.length - 2);
-//}
-
-
-
-
-//for (i = arrToChange.length-1; i >= 0; i--){
-//      reversed.push(arr[i]);
-//  }
-//     return reversed;
-
-//reversed = reverseCharacters(arr[i]) + reversed;
+console.log(reverseArray(arrayTest2));
