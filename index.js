@@ -9,6 +9,11 @@
 
 let arr = ['hello', 'world', 123, 'orange'];
 
+//2) The 'split' method does not work on numbers, but we want the function to return a number with all the digits reversed (e.g. 1234 converts to 4321 and NOT the string "4321")
+//a) Add an if statement to your reverseCharacters function to check the typeof the parameter.
+//b - d) If typeof is ‘string’, return the reversed string as before. If typeof is ‘number’, convert the parameter to a string, reverse the characters, then convert it back into a number. Return the reversed number.
+//e) Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
+
 function reverseCharacters(str) {
   if(typeof str === "string"){
     return str.split("").reverse().join("");
@@ -17,22 +22,9 @@ function reverseCharacters(str) {
   }
 }
 
-function reverseArray(arr) {
-  reversed = [];
-  for (i = 0; i < arr.length; i++){
-    reversed += reverseCharacters[i];
-  }
-     return arr.reverse()
-}
+console.log(reverseCharacters(arr[2]));
+//console.log(arr.length);
 
-console.log(reverseArray(arr));
-
-
-
-//2) The 'split' method does not work on numbers, but we want the function to return a number with all the digits reversed (e.g. 1234 converts to 4321 and NOT the string "4321")
-//a) Add an if statement to your reverseCharacters function to check the typeof the parameter.
-//b - d) If typeof is ‘string’, return the reversed string as before. If typeof is ‘number’, convert the parameter to a string, reverse the characters, then convert it back into a number. Return the reversed number.
-//e) Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
 
 //3) Create a new function with one parameter, which is the array we want to change. The function should:
 //a) Define and initialize an empty array.
@@ -43,7 +35,38 @@ console.log(reverseArray(arr));
 //f) Be sure to print the results from each test case in order to verify your code.
 
 
-
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+
+
+function reverseArray(arr) {
+  let reversed = [];
+  for (i = 0; i < arr.length; i++){
+    reversed = reverseCharacters(arr[i]) + ', ' + reversed;
+  }
+     return reversed.slice(0, reversed.length - 2);
+}
+
+console.log(reverseArray(arrayTest3));
+
+
+//return reverseCharacters(arr[i]);
+
+
+
+//    reversed = reverseCharacters(arr[i]) + ', ' + reversed;
+//  }
+//    return reversed.slice(0, reversed.length - 2);
+//}
+
+
+
+
+//for (i = arrToChange.length-1; i >= 0; i--){
+//      reversed.push(arr[i]);
+//  }
+//     return reversed;
+
+//reversed = reverseCharacters(arr[i]) + reversed;
