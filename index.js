@@ -22,7 +22,7 @@ function reverseCharacters(str) {
   }
 }
 
-console.log(reverseCharacters(arr[2]));
+//console.log(reverseCharacters(arr[2]));
 //console.log(arr.length);
 
 
@@ -49,4 +49,36 @@ function reverseArray(arr) {
      return reversed.reverse();
 }
 
-console.log(reverseArray(arrayTest2));
+console.log(reverseArray(arrayTest3));
+
+
+//Bonus 4-5
+
+function funPhrase(str){
+let newStr = '';
+  if(str.length <= 3){
+    newStr = str.slice(str.length - 1);
+  } else {
+    newStr = str.slice(0,3);
+  }
+  return `We put the ${newStr} in ${str}.`
+}
+
+
+let str = 'Functions rock!';
+
+console.log(funPhrase(str));
+
+//Bonus 6
+
+function calculateAreaOfRectangle(length, width){
+  let rectangleArea = 0;
+  if(!width){
+    rectangleArea = (length**2);
+    return rectangleArea;
+  } else {
+    rectangleArea = (length*width);
+    return rectangleArea;
+  }
+}
+console.log(`The area is ${calculateAreaOfRectangle(8,2)} cm^2.`);
